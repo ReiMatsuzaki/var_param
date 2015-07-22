@@ -1,3 +1,5 @@
+
+
 utest1:
 	python test/test1/test1.py 
 	echo "-------------------------"
@@ -12,3 +14,9 @@ utest2:
 
 utest_param:
 	python test/test_params/test.py
+
+test_opt_cbf:
+	python test/test_opt_cbf/test_opt_cbf.py
+
+test_opt_cbf_extract:
+	python test/test_opt_cbf/extract.py

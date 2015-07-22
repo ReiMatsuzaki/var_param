@@ -1,5 +1,5 @@
 def remove_no():
-    return False
+    return True
 
 def remove_all():
     return False
