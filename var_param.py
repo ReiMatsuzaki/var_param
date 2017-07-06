@@ -13,7 +13,8 @@ def copy_file_with_replace(file_name_from, file_name_to, rep):
     for line in open(file_name_from, 'r'):
         tmp = line
         for (k, v) in rep.items():
-            tmp = tmp.replace("__" + k + "__", str(v))
+            val = str(v[1] if type(v) == tuple else v)
+            tmp = tmp.replace("__" + k + "__", val)
         f_to.write(tmp)
 
 

@@ -9,8 +9,8 @@ def method1_is_SCF():
     return "SCF" in contents
 
 file_list = [ 'sample.in' ]
-params = [ {"xx":1.0, "method1": 'SCF'},
-           {"xx":3.0, "method1": 'DFT'}]
+params = [ {"xx":(1, 1.0), "method1": ('scf', 'SCF')},
+           {"xx":(3, 3.0), "method1": ('dft', 'DFT')}]
 
 cmd =  'echo "^^^^^^^^^^^^^^^^" &&'
 cmd += 'pwd &&'
@@ -22,7 +22,7 @@ vp.run(
     files = file_list,
     params = vp.params.direct(params),
     commands = vp.command(cmd),
-    out_dir = vp.flat_from("results"),
+    out_dir = vp.out_dir.flat_from("results"),
     save_if = method1_is_SCF
 )
 
